@@ -5,91 +5,110 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/TextViewOn"
-        android:layout_width="wrap_content"
-        android:paddingLeft="5dp"
-        android:text="@string/textSpeedOn"
-        android:layout_height="wrap_content">
-    </TextView>
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
-
-        <SeekBar
-            android:id="@+id/SeekBarOn"
-            android:layout_width="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="15dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="100" />
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_weight="100">
+
+            <TextView
+                android:id="@+id/TextViewOn"
+                android:layout_width="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="@string/textSpeedOn"
+                android:layout_height="wrap_content">
+             </TextView>
+
+
+            <SeekBar
+                android:id="@+id/SeekBarOn"
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="100" />
+
+        </LinearLayout>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonMinus"
-            android:id="@+id/buttonOnLess" />
+            android:id="@+id/buttonOnLess"
+            android:layout_gravity="bottom" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonPlus"
-            android:id="@+id/buttonOnMore" />
+            android:id="@+id/buttonOnMore"
+            android:layout_gravity="bottom" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/TextViewOff"
-        android:layout_width="wrap_content"
-        android:paddingLeft="5dp"
-        android:text="@string/textSpeedOff"
-        android:layout_height="wrap_content">
-
-    </TextView>
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
-        <SeekBar
-            android:id="@+id/SeekBarOff"
-            android:layout_width="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="15dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="100" />
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_weight="100">
+
+            <TextView
+                android:id="@+id/TextViewOff"
+                android:layout_width="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="@string/textSpeedOff"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <SeekBar
+                android:id="@+id/SeekBarOff"
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="100"/>
+
+        </LinearLayout>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonMinus"
-            android:id="@+id/buttonOffLess" />
+            android:id="@+id/buttonOffLess"
+            android:layout_gravity="bottom" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonPlus"
-            android:id="@+id/buttonOffMore" />
+            android:id="@+id/buttonOffMore"
+            android:layout_gravity="bottom" />
 
     </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/textViewFreq"
-        android:layout_width="wrap_content"
-        android:paddingLeft="5dp"
-        android:text="@string/frequency"
-        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -97,27 +116,47 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
 
-        <SeekBar
-            android:id="@+id/SeekBarFreq"
-            android:layout_width="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="15dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="100" />
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_weight="100">
+
+            <TextView
+                android:id="@+id/textViewFreq"
+                android:layout_width="wrap_content"
+                android:paddingLeft="5dp"
+                android:text="@string/frequency"
+                android:layout_height="wrap_content" />
+
+            <SeekBar
+                android:id="@+id/SeekBarFreq"
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingRight="15dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="100" />
+
+        </LinearLayout>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonMinus"
-            android:id="@+id/buttonFreqLess" />
+            android:id="@+id/buttonFreqLess"
+            android:layout_gravity="bottom" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:text="@string/buttonPlus"
-            android:id="@+id/buttonFreqMore" />
+            android:id="@+id/buttonFreqMore"
+            android:layout_gravity="bottom" />
 
     </LinearLayout>
 
