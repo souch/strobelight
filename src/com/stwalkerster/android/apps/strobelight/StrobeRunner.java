@@ -32,6 +32,8 @@ public class StrobeRunner implements Runnable {
     }
     
     private static StrobeRunner instance;
+
+    private static int maxSleep = 100; // ms
     
     
     public volatile boolean requestStop = false;
@@ -40,6 +42,25 @@ public class StrobeRunner implements Runnable {
     public volatile double delayOff = 0;
     public volatile StrobeLightConfig controller;
     public volatile String errorMessage = "";
+
+    private void interruptableSleep(double delay) {
+        while (!requestStop && delay > 0) {
+            double sleepTime;
+            if (delay > maxSleep) {
+                delay -= maxSleep;
+                sleepTime = maxSleep;
+            }
+            else {
+                sleepTime = delay;
+                delay = -1;
+            }
+
+            try {
+                Thread.sleep(Math.round(sleepTime));
+            } catch (InterruptedException ex) {
+            }
+        }
+    }
 
     @Override
     public void run() {
@@ -60,16 +81,14 @@ public class StrobeRunner implements Runnable {
             try {
                 if (delayOn > 0) {
                     cam.setParameters(pon);
-                    Thread.sleep(Math.round(delayOn));
+                    interruptableSleep(delayOn);
                 }
 
                 if (delayOff > 0) {
                     cam.setParameters(poff);
-                    Thread.sleep(Math.round(delayOff));
+                    interruptableSleep(delayOff);
                 }
             }
-            catch(InterruptedException ex)
-            {}
             catch(RuntimeException ex)
             {
                 requestStop = true;
