@@ -63,7 +63,15 @@ public class StrobeLightConfig extends Activity
         }
     };
 
-    /** Called when the activity is first created. */
+    @Override
+    protected void onDestroy() {
+        runner.requestStop = true;
+        toggleButton.setChecked(false);
+
+        super.onDestroy();
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -292,14 +300,6 @@ public class StrobeLightConfig extends Activity
 
     private void setTextFreq(double freq) {
         textViewFreq.setText(getResources().getString(R.string.frequency) + String.format(": %.3f Hz", freq));
-    }
-
-    @Override
-    protected void onStop() {
-        runner.requestStop = true;
-        toggleButton.setChecked(false);
-
-        super.onStop();
     }
 
     public void showMessage()

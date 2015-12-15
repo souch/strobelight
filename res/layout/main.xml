@@ -32,8 +32,8 @@
             <SeekBar
                 android:id="@+id/SeekBarOn"
                 android:layout_width="match_parent"
-                android:paddingLeft="5dp"
-                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="100" />
 
@@ -83,8 +83,8 @@
             <SeekBar
                 android:id="@+id/SeekBarOff"
                 android:layout_width="match_parent"
-                android:paddingLeft="5dp"
-                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="100"/>
 
@@ -135,8 +135,8 @@
             <SeekBar
                 android:id="@+id/SeekBarFreq"
                 android:layout_width="match_parent"
-                android:paddingLeft="5dp"
-                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="20dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="100" />
 

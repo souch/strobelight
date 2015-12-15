@@ -1,0 +1,8 @@
+cd ~/droid
+
+cp strobelight1/app/src/main/java/com/stwalkerster/android/apps/strobelight/Strobe* strobelight/src/com/stwalkerster/android/apps/strobelight/ 
+cp strobelight2/app/src/main/res/layout/*.xml strobelight/res/layout/
+cp strobelight1/app/src/main/res/values/*.xml strobelight/res/values/
+cp strobelight1/./app/src/main/AndroidManifest.xml strobelight/AndroidManifest.xml
+
+
