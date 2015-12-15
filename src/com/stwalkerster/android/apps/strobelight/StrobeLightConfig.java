@@ -71,6 +71,11 @@ public class StrobeLightConfig extends Activity
         super.onDestroy();
     }
 
+    private void startRunner() {
+        thread = new Thread(runner);
+        thread.start();
+    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -122,8 +127,7 @@ public class StrobeLightConfig extends Activity
             public void onClick(View v) {
                 // Perform action on clicks
                 if (toggleButton.isChecked()) {
-                    thread = new Thread(runner);
-                    thread.start();
+                    startRunner();
                 } else {
                     runner.requestStop = true;
                 }
@@ -245,6 +249,10 @@ public class StrobeLightConfig extends Activity
         frequency = freqFromDelays((float) runner.delayOff, (float) runner.delayOn);
         setTextFreq(frequency);
         seekbarFreq.setProgress(freqToSeek(frequency));
+
+        // light on as soon the app start
+        startRunner();
+        toggleButton.setChecked(true);
     }
 
     private void setSeekbarFreqProgress(int progress) {
